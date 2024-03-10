@@ -1,0 +1,86 @@
+
+*{
+    font-family: nunito;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    max-width: 90vw;
+}
+
+body{
+    font-family: nunito;
+
+    #root{
+
+        nav.main-nav{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: calc( 100vw - 40px);
+            padding: 5px 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background-color: #fff;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
+            .brand-container{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: fit-content;
+                gap: 10px;
+
+                .icon-container{
+                    img{
+                        width: 30px;
+                    }
+                }
+
+                .brand-name{
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+
+                .search-section{
+                    display: flex;
+                    gap: 5px;
+                    padding-left: 20px;
+
+                    i{
+                        font-size: 14px;
+                        color: #999999;
+                    }
+
+                    input[type="text"]{
+                        border: none;
+                        width: 200px;
+                        max-width: 30vw;
+                        outline: none;
+                    }
+                }
+
+            }
+
+            .options-container{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                .account-icon{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
