@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import logo from "../assets/logo.svg";
+import dp from "../assets/beautiful_girl_dp.jpg";
+import AccountDropdown from './accountDroptDown';
 
 const Navbar = () => {
+
+    const [openDropDown, setOpenDropDown] = useState(false);
+    
+    const toggleDropDown = () => {
+        setOpenDropDown(!openDropDown);
+    }
+
     return (
         <nav className="main-nav">
             <div className="brand-container">
@@ -10,27 +19,16 @@ const Navbar = () => {
                     <img src={logo} alt="Chat App Logo" />
                 </div>
                 <div className="brand-name">Chat App</div>
-                <div className="search-section mb-hidden">
-                    <span>
-                        <i className="fas fa-search"></i>
-                    </span>
-                    <input type="text" placeholder="Search chat, contacts or messages" />
-                </div>
+               
             </div>
 
             <div className="options-container">
-
-                <div className="options-container">
-                    <span>
-                        <i className="fas fa-ellipsis-vertical"></i>
-                    </span>
-                </div>
                 <div className="account-icon">
-                    <span>
-                        <i className="fa-regular fa-circle-user"></i>
-                    </span>
+                    <img src={dp} alt="user profile" onClick={toggleDropDown}/>
                 </div>
             </div>
+
+            {openDropDown && <AccountDropdown close={toggleDropDown} name={"Elizabeth"} email={"empress.lizzo@gmail.com"} profileImage={dp} />}
         </nav>
     );
 }
