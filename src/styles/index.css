@@ -24,7 +24,8 @@ body #root nav.main-nav {
   justify-content: space-between;
   align-items: center;
   background-color: #202124;
-  position: relative;
+  box-shadow: 0 0 10px rgba(197, 197, 197, 0.1);
+  z-index: 999;
   cursor: default;
 }
 body #root nav.main-nav .brand-container {
@@ -63,7 +64,7 @@ body #root nav.main-nav .options-container .account-icon img:hover {
 }
 body #root nav.main-nav section#account-drop-down {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 10px);
   right: 40px;
   width: 400px;
   max-width: 90vw;
@@ -161,4 +162,116 @@ body #root nav.main-nav section#account-drop-down .acc-container .foot span.link
 }
 body #root nav.main-nav section#account-drop-down .acc-container .foot span.dot {
   font-size: 20px;
+}
+body #root .body {
+  padding-top: 60px;
+}
+body #root .body section#conversations-entry {
+  max-width: 400px;
+}
+body #root .body section#conversations-entry header {
+  display: grid;
+  padding: 8px 10px;
+  gap: 5px;
+}
+body #root .body section#conversations-entry header .h-e1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+body #root .body section#conversations-entry header .h-e1 .page-title {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: manrope;
+}
+body #root .body section#conversations-entry header .search-bar {
+  width: 100%;
+  padding: 0px 5px;
+}
+body #root .body section#conversations-entry header .search-bar label {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 5px;
+  align-items: center;
+}
+body #root .body section#conversations-entry header .search-bar label span {
+  font-size: small;
+}
+body #root .body section#conversations-entry header .search-bar label span i {
+  color: #7f7f7f;
+}
+body #root .body section#conversations-entry header .search-bar label input {
+  outline: none;
+  background-color: transparent;
+  border: none;
+}
+body #root .body section#conversations-entry .container {
+  background-color: #16171e;
+  display: grid;
+  gap: 10px;
+  padding: 8px;
+}
+body #root .body section#conversations-entry .container article.conversation-card {
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 10px;
+  background-color: #202124;
+  cursor: pointer;
+  border-radius: 8px;
+  align-items: center;
+}
+body #root .body section#conversations-entry .container article.conversation-card .img {
+  position: relative;
+}
+body #root .body section#conversations-entry .container article.conversation-card .img img {
+  width: 48px;
+  border-radius: 24px;
+}
+body #root .body section#conversations-entry .container article.conversation-card .img .online-status {
+  position: absolute;
+  right: -4px;
+  top: 0px;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+}
+body #root .body section#conversations-entry .container article.conversation-card .img .online-status.online {
+  background-color: rgb(0, 255, 0);
+}
+body #root .body section#conversations-entry .container article.conversation-card .img .online-status.offline {
+  background-color: grey;
+}
+body #root .body section#conversations-entry .container article.conversation-card .content .recipient {
+  display: flex;
+  justify-content: space-between;
+}
+body #root .body section#conversations-entry .container article.conversation-card .content .recipient .date {
+  font-size: small;
+  color: #7f7f7f;
+}
+body #root .body section#conversations-entry .container article.conversation-card .content .message-card {
+  position: relative;
+}
+body #root .body section#conversations-entry .container article.conversation-card .content .message-card .content {
+  font-size: 13px;
+  color: #7f7f7f;
+}
+body #root .body section#conversations-entry .container article.conversation-card .content .message-card .float {
+  position: absolute;
+  right: 5px;
+  bottom: 0px;
+}
+body #root .body section#conversations-entry .container article.conversation-card .content .message-card .float .msg-delivery.blue i {
+  color: #2990ff;
+}
+body #root .body section#conversations-entry .container article.conversation-card .content .message-card .float .msg-delivery.gray i {
+  color: gray;
+}
+body #root .body section#conversations-entry .container article.conversation-card .content .message-card .float .msg-delivery i {
+  font-size: small;
+}
+body #root .body section#conversations-entry .container article.conversation-card .content .message-card .float .msg-delivery i:nth-of-type(2) {
+  margin-left: -4px;
 }/*# sourceMappingURL=index.css.map */
