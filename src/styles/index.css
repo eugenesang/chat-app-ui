@@ -62,53 +62,73 @@ body #root nav.main-nav .options-container .account-icon img {
 body #root nav.main-nav .options-container .account-icon img:hover {
   border: 2px solid #003f86;
 }
-body #root nav.main-nav section#account-drop-down {
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 40px;
+body #root nav.main-nav .dropdown-container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  background-color: transparent;
+  padding-top: 60px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+}
+body #root nav.main-nav .dropdown-container section#account-drop-down {
   width: 400px;
-  max-width: 90vw;
+  max-width: 80vw;
+  height: -moz-fit-content;
+  height: fit-content;
   padding: 20px;
   border-radius: 10px;
   background-color: #343638;
+  margin-right: 40px;
+  z-index: 1001;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .header {
+@media screen and (max-width: 768px) {
+  body #root nav.main-nav .dropdown-container section#account-drop-down {
+    max-width: 80vw;
+    margin-right: 16px;
+  }
+}
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .header {
   position: relative;
   text-align: center;
   padding: 10px 0;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .header .right {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .header .right {
   position: absolute;
   top: 0px;
   right: 10px;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .header .right button {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .header .right button {
   background-color: transparent;
   font-size: 24px;
   border: none;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .content {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .content {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .content .top {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .content .top {
   padding: 20px 0 10px 0;
   text-align: center;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .content .top img {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .content .top img {
   width: 120px;
   max-width: 50%;
   border-radius: 50%;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .content .greetings {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .content .greetings {
   font-size: 35px;
   text-align: center;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .content .action-btn {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .content .action-btn {
   text-align: center;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .content .action-btn button {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .content .action-btn button {
   background-color: transparent;
   border: 1px solid gray;
   border-radius: 20px;
@@ -117,7 +137,7 @@ body #root nav.main-nav section#account-drop-down .acc-container .content .actio
   color: #2990ff;
   cursor: pointer;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .actions-container {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .actions-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5px;
@@ -125,7 +145,7 @@ body #root nav.main-nav section#account-drop-down .acc-container .actions-contai
   margin: 4px auto;
   margin-top: 16px;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .actions-container button {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .actions-container button {
   background-color: #16171e;
   border: none;
   font-size: 18px;
@@ -137,42 +157,49 @@ body #root nav.main-nav section#account-drop-down .acc-container .actions-contai
   align-items: center;
   cursor: pointer;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .actions-container button.right {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .actions-container button.right {
   border-radius: 0 16px 16px 0;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .actions-container button.left {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .actions-container button.left {
   border-radius: 16px 0 0 16px;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .actions-container button:hover {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .actions-container button:hover {
   background-color: #505152;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .foot {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .foot {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 8px;
   padding-top: 16px;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .foot span {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .foot span {
   text-align: left;
   font-size: small;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .foot span.link {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .foot span.link {
   text-align: right;
 }
-body #root nav.main-nav section#account-drop-down .acc-container .foot span.dot {
+body #root nav.main-nav .dropdown-container section#account-drop-down .acc-container .foot span.dot {
   font-size: 20px;
 }
 body #root .body {
   padding-top: 60px;
 }
 body #root .body section#conversations-entry {
+  background-color: #16171e;
   max-width: 400px;
+}
+@media screen and (max-width: 768px) {
+  body #root .body section#conversations-entry {
+    max-width: 100%;
+  }
 }
 body #root .body section#conversations-entry header {
   display: grid;
   padding: 8px 10px;
-  gap: 5px;
+  gap: 8px;
+  border-bottom: 0.5px solid gray;
 }
 body #root .body section#conversations-entry header .h-e1 {
   width: 100%;
@@ -207,7 +234,6 @@ body #root .body section#conversations-entry header .search-bar label input {
   border: none;
 }
 body #root .body section#conversations-entry .container {
-  background-color: #16171e;
   display: grid;
   gap: 10px;
   padding: 8px;
@@ -217,10 +243,13 @@ body #root .body section#conversations-entry .container article.conversation-car
   display: grid;
   grid-template-columns: 48px 1fr;
   gap: 10px;
-  background-color: #202124;
   cursor: pointer;
   border-radius: 8px;
   align-items: center;
+  position: relative;
+}
+body #root .body section#conversations-entry .container article.conversation-card.active, body #root .body section#conversations-entry .container article.conversation-card:hover {
+  background-color: #202124;
 }
 body #root .body section#conversations-entry .container article.conversation-card .img {
   position: relative;
@@ -249,19 +278,25 @@ body #root .body section#conversations-entry .container article.conversation-car
 }
 body #root .body section#conversations-entry .container article.conversation-card .content .recipient .date {
   font-size: small;
-  color: #7f7f7f;
+  color: rgb(10, 200, 130);
 }
 body #root .body section#conversations-entry .container article.conversation-card .content .message-card {
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
 }
 body #root .body section#conversations-entry .container article.conversation-card .content .message-card .content {
   font-size: 13px;
   color: #7f7f7f;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 body #root .body section#conversations-entry .container article.conversation-card .content .message-card .float {
-  position: absolute;
-  right: 5px;
-  bottom: 0px;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 body #root .body section#conversations-entry .container article.conversation-card .content .message-card .float .msg-delivery.blue i {
   color: #2990ff;
@@ -274,4 +309,34 @@ body #root .body section#conversations-entry .container article.conversation-car
 }
 body #root .body section#conversations-entry .container article.conversation-card .content .message-card .float .msg-delivery i:nth-of-type(2) {
   margin-left: -4px;
+}
+body #root .body section#conversations-entry .container article.conversation-card .options-menu {
+  position: fixed;
+  width: -moz-fit-content;
+  width: fit-content;
+  z-index: 1002;
+  background-color: #343638;
+  border-radius: 4px;
+  border: 1px solid #343638;
+}
+body #root .body section#conversations-entry .container article.conversation-card .options-menu hr {
+  border: 0.25px solid #505152;
+  border-bottom: none;
+}
+body #root .body section#conversations-entry .container article.conversation-card .options-menu li {
+  list-style-type: none;
+  padding: 8px 16px;
+  font-size: small;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+}
+body #root .body section#conversations-entry .container article.conversation-card .options-menu li:hover {
+  background-color: #202124;
+}
+body #root .body section#conversations-entry .container article.conversation-card .options-menu li:first-of-type {
+  padding-top: 12px;
+}
+body #root .body section#conversations-entry .container article.conversation-card .options-menu li:last-of-type {
+  padding-bottom: 12px;
 }/*# sourceMappingURL=index.css.map */

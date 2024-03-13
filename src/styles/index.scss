@@ -3,6 +3,7 @@ $bright-blue: #2990ff;
 $red: #dc3545;
 $bg: #202124;
 $green: rgb(0, 255, 0);
+$light-green: rgb(10, 200, 130);
 $light-bg: #343638;
 $light-bg-1: #505152;
 $dark-bg: #16171e;
@@ -84,122 +85,146 @@ body {
                 }
             }
 
-            section#account-drop-down {
-                position: absolute;
-                top: calc(100% + 10px);
-                right: 40px;
-                width: 400px;
-                max-width: 90vw;
-                padding: 20px;
-                border-radius: 10px;
-                background-color: $light-bg;
+            .dropdown-container{
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                height: 100vh;
+                width: 100vw;
+                background-color: transparent;
+                padding-top: 60px;
+                padding-right: 40px;
+                display: flex;
+                justify-content: flex-end;
+                z-index: 1000;
 
-                .acc-container {
-                    .header {
-                        position: relative;
-                        text-align: center;
-                        padding: 10px 0;
 
-                        .right {
-                            position: absolute;
-                            top: 0px;
-                            right: 10px;
+                section#account-drop-down {
+                    
+                    width: 400px;
+                    max-width: 80vw;
+                    height: fit-content;
+                    padding: 20px;
+                    border-radius: 10px;
+                    background-color: $light-bg;
+                    margin-right: 40px;
+                    z-index: 1001;
 
-                            button {
-                                background-color: transparent;
-                                font-size: 24px;
-                                border: none;
-                            }
+
+                    @media screen and (max-width: 768px){
+                        &{
+                            max-width: 80vw;
+                            margin-right: 16px;
                         }
                     }
-
-                    .content {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 16px;
-
-                        .top {
-                            padding: 20px 0 10px 0;
+    
+                    .acc-container {
+                        .header {
+                            position: relative;
                             text-align: center;
-
-                            img {
-                                width: 120px;
-                                max-width: 50%;
-                                border-radius: 50%;
+                            padding: 10px 0;
+    
+                            .right {
+                                position: absolute;
+                                top: 0px;
+                                right: 10px;
+    
+                                button {
+                                    background-color: transparent;
+                                    font-size: 24px;
+                                    border: none;
+                                }
                             }
                         }
-
-                        .greetings {
-                            font-size: 35px;
-                            text-align: center;
-                        }
-
-                        .action-btn {
-                            text-align: center;
-
-                            button {
-                                background-color: transparent;
-                                border: 1px solid gray;
-                                border-radius: 20px;
-                                padding: 4px 24px;
-                                font-size: 16px;
-                                color: $bright-blue;
-                                cursor: pointer;
+    
+                        .content {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 16px;
+    
+                            .top {
+                                padding: 20px 0 10px 0;
+                                text-align: center;
+    
+                                img {
+                                    width: 120px;
+                                    max-width: 50%;
+                                    border-radius: 50%;
+                                }
+                            }
+    
+                            .greetings {
+                                font-size: 35px;
+                                text-align: center;
+                            }
+    
+                            .action-btn {
+                                text-align: center;
+    
+                                button {
+                                    background-color: transparent;
+                                    border: 1px solid gray;
+                                    border-radius: 20px;
+                                    padding: 4px 24px;
+                                    font-size: 16px;
+                                    color: $bright-blue;
+                                    cursor: pointer;
+                                }
                             }
                         }
-                    }
-
-                    .actions-container {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
-                        gap: 5px;
-                        width: 90%;
-                        margin: 4px auto;
-                        margin-top: 16px;
-
-                        button {
-                            background-color: $dark-bg;
-                            border: none;
-                            font-size: 18px;
-                            text-align: left;
-                            padding: 12px 16px;
+    
+                        .actions-container {
                             display: grid;
-                            grid-template-columns: auto 1fr;
-                            gap: 8px;
-                            align-items: center;
-                            cursor: pointer;
-
-                            &.right {
-                                border-radius: 0 16px 16px 0;
-                            }
-
-                            &.left {
-                                border-radius: 16px 0 0 16px;
-                            }
-
-                            &:hover {
-                                background-color: $light-bg-1;
+                            grid-template-columns: 1fr 1fr;
+                            gap: 5px;
+                            width: 90%;
+                            margin: 4px auto;
+                            margin-top: 16px;
+    
+                            button {
+                                background-color: $dark-bg;
+                                border: none;
+                                font-size: 18px;
+                                text-align: left;
+                                padding: 12px 16px;
+                                display: grid;
+                                grid-template-columns: auto 1fr;
+                                gap: 8px;
+                                align-items: center;
+                                cursor: pointer;
+    
+                                &.right {
+                                    border-radius: 0 16px 16px 0;
+                                }
+    
+                                &.left {
+                                    border-radius: 16px 0 0 16px;
+                                }
+    
+                                &:hover {
+                                    background-color: $light-bg-1;
+                                }
                             }
                         }
-                    }
-
-                    .foot {
-                        display: grid;
-                        grid-template-columns: 1fr auto 1fr;
-                        align-items: center;
-                        gap: 8px;
-                        padding-top: 16px;
-
-                        span {
-                            text-align: left;
-                            font-size: small;
-
-                            &.link {
-                                text-align: right;
-                            }
-
-                            &.dot {
-                                font-size: 20px;
+    
+                        .foot {
+                            display: grid;
+                            grid-template-columns: 1fr auto 1fr;
+                            align-items: center;
+                            gap: 8px;
+                            padding-top: 16px;
+    
+                            span {
+                                text-align: left;
+                                font-size: small;
+    
+                                &.link {
+                                    text-align: right;
+                                }
+    
+                                &.dot {
+                                    font-size: 20px;
+                                }
                             }
                         }
                     }
@@ -211,12 +236,21 @@ body {
             padding-top: 60px;
 
             section#conversations-entry {
+                background-color: $dark-bg ;
                 max-width: 400px;
+
+                @media screen and (max-width : 768px) {
+                    &{
+                        max-width: 100%;
+
+                    }
+                }
 
                 header {
                     display: grid;
                     padding: 8px 10px;
-                    gap: 5px;
+                    gap: 8px;
+                    border-bottom: .5px solid gray;
 
                     .h-e1 {
                         width: 100%;
@@ -259,7 +293,6 @@ body {
                 }
 
                 .container{
-                    background-color: $dark-bg ;
                     display: grid;
                     gap: 10px;
                     padding: 8px;
@@ -269,10 +302,14 @@ body {
                         display: grid;
                         grid-template-columns: 48px 1fr;
                         gap: 10px;
-                        background-color: $bg;
                         cursor: pointer;
                         border-radius: 8px;
                         align-items: center;
+                        position: relative;
+
+                        &.active, &:hover{
+                            background-color: $bg;
+                        }
 
                         .img{
                             position: relative;
@@ -307,22 +344,27 @@ body {
 
                                 .date{
                                     font-size: small;
-                                    color: #7f7f7f;
+                                    color: $light-green;
                                 }
                             }
 
                             .message-card{
                                 position: relative;
+                                display: grid;
+                                grid-template-columns: 1fr auto;
+                                align-items: baseline;
 
                                 .content{
                                     font-size: 13px;
                                     color: #7f7f7f;
+                                    width: 100%;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
                                 }
 
                                 .float{
-                                    position: absolute;
-                                    right: 5px;
-                                    bottom: 0px;
+                                    width: fit-content;
 
                                     .msg-delivery{
 
@@ -347,6 +389,41 @@ body {
                                             }
                                         }
                                     }
+                                }
+                            }
+                        }
+
+                        .options-menu{
+                            position: fixed;
+                            width: fit-content;
+                            z-index: 1002;
+                            background-color: $light-bg;
+                            border-radius: 4px;
+                            border: 1px solid $light-bg;
+
+                            hr{
+                                border: .25px solid $light-bg-1;
+                                border-bottom: none;
+                            }
+
+                            li{
+                                list-style-type: none;
+                                padding: 8px 16px;
+                                font-size: small;
+                                display: grid;
+                                grid-template-columns: auto 1fr;
+                                gap: 8px;
+
+                                &:hover{
+                                    background-color: $bg;
+                                }
+
+                                &:first-of-type{
+                                    padding-top: 12px;
+                                }
+
+                                &:last-of-type{
+                                    padding-bottom: 12px;
                                 }
                             }
                         }
