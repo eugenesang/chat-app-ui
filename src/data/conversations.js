@@ -20,7 +20,7 @@ const conversations = [
         img: img_a,
         lastMessage: {
             fromMe: true,
-            message: "Thanks",
+            message: "Thanks, I wish there is something I could do to show how much I appreciate this",
             sent: false,
             delivered: false,
             read: false,
