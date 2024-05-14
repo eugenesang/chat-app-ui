@@ -98,11 +98,6 @@ const ConversationCard = ({
         }else{
             setMenuY(clientY)
         }
-
-        console.log({
-            clientX,
-            screenWidth
-        })
     };
 
     const handleClickOutside = (event) => {
